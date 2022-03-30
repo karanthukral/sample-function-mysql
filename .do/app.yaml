@@ -1,0 +1,19 @@
+databases:
+- cluster_name: MYSQL_DB_NAME
+  engine: MYSQL
+  name: db
+  production: true
+functions:
+- envs:
+  - key: DB_URL
+    value: ${db.HOSTNAME}
+  github:
+    branch: main
+    deploy_on_push: true
+    repo: karanthukral/sample-function-mysql
+  name: sample-function-mysql
+  routes:
+  - path: /
+  source_dir: /
+name: sample-function-mysql
+region: nyc

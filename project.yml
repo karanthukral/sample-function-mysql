@@ -1,0 +1,8 @@
+packages:
+  - name: default
+    actions:
+      - name: "hello"
+        runtime: 'go:default'
+        web: false
+        environment:
+          DB_URL: "${DB_URL}"
